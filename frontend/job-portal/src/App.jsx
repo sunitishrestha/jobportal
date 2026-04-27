@@ -69,8 +69,8 @@ import {
 } from "react-router-dom";
 
 import LandingPages from "./pages/Landingpage/components/LandingPages";
-// import Login from "./pages/Auth/Login";
-// import Signup from "./pages/Auth/Signup";
+import Login from "./pages/Auth/Login";
+import Signup from "./pages/Auth/Signup";
 
 // import JobSeekerDashboard from "./pages/JobSeeker/JobSeekerDashboard";
 // import JobDetails from "./pages/JobSeeker/JobDetails";
@@ -91,10 +91,10 @@ const App = () => {
         {/* public routes */}
         <Route path="/" element={<LandingPages />} />
         <Route path="/landingpage" element={<LandingPages />} />
-        {/* <Route path="/login" element={<Login />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
 
-        <Route path="/find-jobs" element={<JobSeekerDashboard />} />
+        {/* <Route path="/find-jobs" element={<JobSeekerDashboard />} />
         <Route path="/job/:jobId" element={<JobDetails />} />
         <Route path="/saved-job" element={<SaveJobs />} />
         <Route path="/profile" element={<UserProfile />} />

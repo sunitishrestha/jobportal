@@ -1,5 +1,6 @@
 import { Briefcase } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const Header = () => {
   const isAuthenticated = true;
@@ -7,7 +8,12 @@ const Header = () => {
   const navigate = useNavigate();
 
   return (
-    <header className="border-b bg-white">
+    <motion.header
+      initial={{ y: -20, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.6 }}
+      className="sticky top-0 left-0 w-full bg-white shadow-md z-50"
+    >
       <div className="container mx-auto px-4 py-3 flex items-center justify-between">
         {/* logo */}
         <div className="flex items-center space-x-3 cursor-pointer">
@@ -18,7 +24,7 @@ const Header = () => {
         </div>
 
         {/* nav links */}
-        <div className="hidden md:flex items-center space-x-8">
+        <div className="flex items-center space-x-8">
           <nav className="flex items-center space-x-6 text-gray-700">
             <button
               onClick={() => navigate("/find-jobs")}
@@ -40,7 +46,6 @@ const Header = () => {
               For Employers
             </button>
           </nav>
-
           {/* auth section */}
           <div className="flex items-center space-x-4">
             {isAuthenticated ? (
@@ -80,7 +85,7 @@ const Header = () => {
           </div>
         </div>
       </div>
-    </header>
+    </motion.header>
   );
 };
 
